@@ -5,10 +5,7 @@ from hellbox import Chute, Hellbox
 class InsertDummyDsig(Chute):
     """InsertDummyDsig adds a valid DSIG table with no signatures."""
 
-    def run(self, files):
-        return [self._process(file) for file in files]
-
-    def _process(self, file):
+    def process(self, file):
         Hellbox.info(f"Updating DSIG: {file.basename}")
 
         copy = file.copy()
