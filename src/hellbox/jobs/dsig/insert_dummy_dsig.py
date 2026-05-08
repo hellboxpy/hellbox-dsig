@@ -6,7 +6,7 @@ class InsertDummyDsig(Chute):
     """InsertDummyDsig adds a valid DSIG table with no signatures."""
 
     def process(self, file):
-        Hellbox.info(f"Updating DSIG: {file.basename}")
+        Hellbox.info(f"Updating DSIG: {file.name}")
 
         copy = file.copy()
 
