@@ -19,7 +19,7 @@ Installation
 Using the [hell CLI](https://github.com/hellboxpy/hell#installation):
 
 ```shell
-$ hell install hellbox-dsig
+$ hell add hellbox-dsig
 ```
 
 Development
