@@ -1,11 +1,13 @@
-hellbox-dsig
-============
+# hellbox-dsig
 
 A hellbox job that works with [digital signature tables](https://docs.microsoft.com/en-us/typography/opentype/spec/dsig).
 
-* `InsertDummyDsig` — adds a valid digital signature table to an OTF/TTF font file.
+## Usage
+
+`InsertDummyDsig` adds a valid digital signature table to an OTF/TTF font file.
 
 ```python
+from hellbox import Hellbox
 from hellbox.jobs.dsig import InsertDummyDsig
 
 with Hellbox("build") as task:
@@ -13,24 +15,15 @@ with Hellbox("build") as task:
     source >> InsertDummyDsig() >> task.write("./build/otf")
 ```
 
-Installation
-------------
+## Installation
 
-Using the [hell CLI](https://github.com/hellboxpy/hell#installation):
-
-```shell
-$ hell add hellbox-dsig
+```sh
+hell add hellbox-dsig
 ```
 
-Development
------------
+## Development
 
-```shell
-$ pip install -e .
-$ pytest
+```sh
+uv sync
+uv run pytest
 ```
-
-Contributing
-------------
-
-To come...
