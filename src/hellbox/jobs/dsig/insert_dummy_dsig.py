@@ -1,3 +1,5 @@
+from typing import Any, cast
+
 from fontTools import ttLib
 from hellbox import Chute, Hellbox
 
@@ -11,13 +13,13 @@ class InsertDummyDsig(Chute):
         copy = file.copy()
 
         font = ttLib.TTFont(copy.content_path)
-        font.tables["DSIG"] = self._create_signature()
+        font.tables[cast(Any, "DSIG")] = self._create_signature()
         font.save(copy.content_path)
 
         return copy
 
     def _create_signature(self):
-        table = ttLib.newTable("DSIG")
+        table = cast(Any, ttLib.newTable("DSIG"))
         table.ulVersion = 1
         table.usFlag = 0
         table.usNumSigs = 0
